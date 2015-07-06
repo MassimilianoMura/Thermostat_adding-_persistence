@@ -16,6 +16,11 @@ describe('Thermostat', function() {
       expect(thermostat.temperature).toEqual(21)
     });
 
+    it('you can decrease the temp with the down button', function() {
+      Thermostat.prototype.decreaseTemperature()
+      expect(thermostat.temperature).toEqual(19)
+    });
+
   });
 
 });
