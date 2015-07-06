@@ -37,5 +37,12 @@ Thermostat.prototype.changePowerSaveMode = function() {
   } else {
     return Thermostat.prototype.powerSave = true;
   };
-
 };
+
+
+Thermostat.prototype.resetTemperature = function() {
+  Thermostat.prototype.temperature = 20;
+  console.log(Thermostat.prototype.temperature)
+};
+
+

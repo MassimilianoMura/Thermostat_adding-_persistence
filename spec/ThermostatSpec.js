@@ -50,7 +50,7 @@ describe('Thermostat', function() {
 
   });
 
-  describe('can reset the temperature to 20 degrees', function() {
+    it('can reset the temperature to 20 degrees', function() {
     Thermostat.prototype.resetTemperature()
     expect(thermostat.temperature).toEqual(20);
   });
