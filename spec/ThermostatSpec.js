@@ -11,6 +11,11 @@ describe('Thermostat', function() {
       expect(thermostat.temperature).toEqual(20)
     });
 
+    it('you can increase the temp with the up button', function() {
+      Thermostat.prototype.increaseTemperaure()
+      expect(thermostat.temperature).toEqual(21)
+    });
+
   });
 
 });
