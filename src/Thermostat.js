@@ -4,15 +4,19 @@ Thermostat.prototype.temperature = 20;
 
 Thermostat.prototype.powerSave = true;
 
+
 Thermostat.prototype.increaseTemperature = function() {
-  if (Thermostat.prototype.powerSave = true) {
+  if (Thermostat.prototype.powerSave == true) {
     if (Thermostat.prototype.temperature <= 24) {
       Thermostat.prototype.temperature++
     };
-  };
+  } else {
+    Thermostat.prototype.temperature++
+  }
 
   console.log(Thermostat.prototype.temperature)
 };
+
 
 Thermostat.prototype.decreaseTemperature = function() {
   if (Thermostat.prototype.temperature > 10) {
@@ -21,12 +25,13 @@ Thermostat.prototype.decreaseTemperature = function() {
   };
 };
 
+
 Thermostat.prototype.changePowerSaveMode = function() {
 
   if (Thermostat.prototype.powerSave === true) {
-    Thermostat.prototype.powerSave = false;
+    return Thermostat.prototype.powerSave = false;
   } else {
-    Thermostat.prototype.powerSave = true;
+    return Thermostat.prototype.powerSave = true;
   };
 
 };

@@ -33,14 +33,22 @@ describe('Thermostat', function() {
 
   describe('has power save mode', function() {
 
-    it('which has maximum temperature of 25 degrees when on', function(){
-      Thermostat.prototype.changePowerSaveMode()
+    it('which has maximum temperature of 25 degrees when on', function() {
       Thermostat.prototype.temperature = 24;
       Thermostat.prototype.increaseTemperature()
       Thermostat.prototype.increaseTemperature()
       expect(thermostat.temperature).toEqual(25);
     });
 
+    it('which has maximum temperature of 32 degrees when off', function() {
+      Thermostat.prototype.temperature = 31;
+      Thermostat.prototype.increaseTemperature()
+      Thermostat.prototype.increaseTemperature()
+      expect(thermostat.temperature).toEqual(32);
+    })
+
+
   });
+
 
 });
