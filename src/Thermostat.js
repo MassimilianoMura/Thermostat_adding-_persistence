@@ -10,9 +10,13 @@ Thermostat.prototype.increaseTemperature = function() {
     if (Thermostat.prototype.temperature <= 24) {
       Thermostat.prototype.temperature++
     };
-  } else {
-    Thermostat.prototype.temperature++
-  }
+  };
+
+  if (Thermostat.prototype.powerSave == false) {
+    if (Thermostat.prototype.temperature <= 31) {
+      Thermostat.prototype.temperature++
+    };
+  };
 
   console.log(Thermostat.prototype.temperature)
 };

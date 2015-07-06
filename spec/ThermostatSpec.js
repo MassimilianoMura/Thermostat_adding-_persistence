@@ -41,13 +41,18 @@ describe('Thermostat', function() {
     });
 
     it('which has maximum temperature of 32 degrees when off', function() {
+      Thermostat.prototype.changePowerSaveMode()
       Thermostat.prototype.temperature = 31;
       Thermostat.prototype.increaseTemperature()
       Thermostat.prototype.increaseTemperature()
       expect(thermostat.temperature).toEqual(32);
-    })
+    });
 
+  });
 
+  describe('can reset the temperature to 20 degrees', function() {
+    Thermostat.prototype.resetTemperature()
+    expect(thermostat.temperature).toEqual(20);
   });
 
 
