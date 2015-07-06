@@ -17,8 +17,9 @@ describe('Thermostat', function() {
     });
 
     it('you can decrease the temp', function() {
+      Thermostat.prototype.temperature = 30;
       Thermostat.prototype.decreaseTemperature()
-      expect(thermostat.temperature).toEqual(19)
+      expect(thermostat.temperature).toEqual(29)
     });
 
   });
