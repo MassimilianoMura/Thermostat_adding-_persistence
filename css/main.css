@@ -13,7 +13,6 @@ body {
 
 #display {
 	font-size: 6em;
-	color: blue;
 }
 
 .controller_button {
@@ -27,4 +26,16 @@ body {
 
 #checkBoxForm {
   font-size: 1.3em;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
 }

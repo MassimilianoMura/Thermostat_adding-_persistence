@@ -8,17 +8,35 @@ $('#display').html(thermostat.temperature + ' °C');
 // document.getElementById("display").innerHTML = temperature
 
 // $(buttons[0]).click(thermostat.increaseTemperature());
+var color = function () {
+  var checkTemperature = thermostat.temperature
+  if (checkTemperature <18){
+    $('#display').removeClass();
+    $('#display').addClass('green');
+   } else if (checkTemperature >17 && checkTemperature <25){
+    $('#display').removeClass();
+    $('#display').addClass('yellow')
+   } else {
+    $('#display').removeClass();
+    $('#display').addClass('red')
+   }
+}
+
+
 
 var increase = function (e) {
   e.preventDefault();
   thermostat.increaseTemperature();
+  color();
   $('#display').html(thermostat.temperature + ' °C');
 }
 
 var decrease = function (e) {
   e.preventDefault();
   thermostat.decreaseTemperature();
+  color();
   $('#display').html(thermostat.temperature + ' °C');
+
 }
 
 var powerSave = function () {
@@ -29,22 +47,11 @@ var powerSave = function () {
 var reset = function (e) {
   e.preventDefault();
   thermostat.resetTemperature();
+  color();
   $('#display').html(thermostat.temperature + ' °C');
 }
 
-var color = function () {
-	var colorAssigned;
-  if (thermostat.temperature <18){ 
-  	colorAssigned = 'green';
-  	console.log(colorAssigned)
-   } else if (thermostat.temperature >17 && thermostat.temperature <25){
-   	colorAssigned = 'yellow';
-   	console.log(colorAssigned)
-   } else {
-   	colorAssigned = 'red';
-   	console.log(colorAssigned)
-   }
-}
+
 
 
 $(buttons[0]).click(increase);
