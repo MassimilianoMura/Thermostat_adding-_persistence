@@ -1,10 +1,30 @@
+.general-width {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+
+body {
+  font-family: 'Oswald';
+  background-color: #E6E6E6;
+}
+
+
 #display {
-	font-size: 5em;
+	font-size: 6em;
 	color: blue;
 }
 
 .controller_button {
-  font-size: 1.2em;
+  font-size: 1.9em;
   background-color: green;
   color: yellow;
+  border: 2px solid grey;
+  border-radius: 25px;
+
+}
+
+#checkBoxForm {
+  font-size: 1.3em;
 }
