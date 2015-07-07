@@ -1,0 +1,10 @@
+#display {
+	font-size: 5em;
+	color: blue;
+}
+
+.controller_button {
+  font-size: 1.2em;
+  background-color: green;
+  color: yellow;
+}
