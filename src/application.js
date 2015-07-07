@@ -58,7 +58,15 @@ $(buttons[0]).click(increase);
 $(buttons[1]).click(decrease);
 $(buttons[2]).click(reset);
 
-$('#powerSaveCheckBox').change(function(e) {
+
+
+
+
+
+$('#powerSaveCheckBox').change(function() {
     if(!$(this).is(':checked'))
         powerSave();
 });
+
+
+
