@@ -32,6 +32,21 @@ var reset = function (e) {
   $('#display').html(thermostat.temperature + ' °C');
 }
 
+var color = function () {
+	var colorAssigned;
+  if (thermostat.temperature <18){ 
+  	colorAssigned = 'green';
+  	console.log(colorAssigned)
+   } else if (thermostat.temperature >17 && thermostat.temperature <25){
+   	colorAssigned = 'yellow';
+   	console.log(colorAssigned)
+   } else {
+   	colorAssigned = 'red';
+   	console.log(colorAssigned)
+   }
+}
+
+
 $(buttons[0]).click(increase);
 $(buttons[1]).click(decrease);
 $(buttons[2]).click(reset);
