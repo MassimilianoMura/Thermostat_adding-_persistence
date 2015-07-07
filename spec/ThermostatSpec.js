@@ -17,13 +17,21 @@ describe('Thermostat', function() {
     });
 
     it('you can decrease the temp', function() {
-      thermostat.temperature = 30;
+
+      while (thermostat.temperature < 30) {
+        thermostat.temperature++
+      }
+
       thermostat.decreaseTemperature()
       expect(thermostat.temperature).toEqual(29)
     });
 
     it('minimum temperature is 10 degrees', function () {
-      thermostat.temperature = 11;
+
+      while (thermostat.temperature > 11) {
+        thermostat.temperature--
+      }
+
       thermostat.decreaseTemperature()
       thermostat.decreaseTemperature()
       expect(thermostat.temperature).toEqual(10);
@@ -34,7 +42,11 @@ describe('Thermostat', function() {
   describe('has power save mode', function() {
 
     it('which has maximum temperature of 25 degrees when on', function() {
-      thermostat.temperature = 24;
+
+       while (thermostat.temperature < 24) {
+        thermostat.temperature++
+      }
+
       thermostat.increaseTemperature()
       thermostat.increaseTemperature()
       expect(thermostat.temperature).toEqual(25);
@@ -42,7 +54,11 @@ describe('Thermostat', function() {
 
     it('which has maximum temperature of 32 degrees when off', function() {
       thermostat.changePowerSaveMode()
-      thermostat.temperature = 31;
+
+       while (thermostat.temperature < 31) {
+        thermostat.temperature++
+      }
+
       thermostat.increaseTemperature()
       thermostat.increaseTemperature()
       expect(thermostat.temperature).toEqual(32);
