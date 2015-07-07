@@ -21,8 +21,8 @@ var decrease = function (e) {
   $('#display').html(thermostat.temperature);
 }
 
-var powerSave = function (e) {
-  e.preventDefault();
+var powerSave = function () {
+  // e.preventDefault();
   thermostat.changePowerSaveMode();
 }
 
@@ -34,5 +34,9 @@ var reset = function (e) {
 
 $(buttons[0]).click(increase);
 $(buttons[1]).click(decrease);
-$(buttons[2]).click(powerSave);
-$(buttons[3]).click(reset);
+$(buttons[2]).click(reset);
+
+$('#powerSaveCheckBox').change(function(e) {
+    if(!$(this).is(':checked'))
+        powerSave();
+});

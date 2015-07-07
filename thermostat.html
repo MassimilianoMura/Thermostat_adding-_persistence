@@ -9,14 +9,18 @@
 <div id='display'></div>
 
 <div id='controller'>
-  <button class='controller_button'>INCREASE TEMP</button>
-  <button class='controller_button'>DECREASE TEMP</button>
-  <button class='controller_button'>POWER SAFE MODE</button>
+  <button class='controller_button'>&uarr;</button>
+  <button class='controller_button'>&darr;</button>
   <button class='controller_button'>RESET</button>
+  <form> 
+  	<p>Power Saving Mode<p> <input type="checkbox" id="powerSaveCheckBox" checked>
+  	</form>
 </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="src/Thermostat.js"></script>
 <script type="text/javascript" src="src/application.js"></script>
 
@@ -25,3 +29,4 @@
 
 </body>
 </html>
+
