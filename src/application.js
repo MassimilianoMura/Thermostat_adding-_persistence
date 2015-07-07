@@ -15,5 +15,24 @@ var increase = function (e) {
   $('#display').html(thermostat.temperature);
 }
 
-$(buttons[0]).click(increase);
+var decrease = function (e) {
+  e.preventDefault();
+  thermostat.decreaseTemperature();
+  $('#display').html(thermostat.temperature);
+}
 
+var powerSave = function (e) {
+  e.preventDefault();
+  thermostat.changePowerSaveMode();
+}
+
+var reset = function (e) {
+  e.preventDefault();
+  thermostat.resetTemperature();
+  $('#display').html(thermostat.temperature);
+}
+
+$(buttons[0]).click(increase);
+$(buttons[1]).click(decrease);
+$(buttons[2]).click(powerSave);
+$(buttons[3]).click(reset);
