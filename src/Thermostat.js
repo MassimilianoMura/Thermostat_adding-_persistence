@@ -7,6 +7,7 @@ Thermostat.prototype.powerSave = true;
 
 
 Thermostat.prototype.increaseTemperature = function() {
+
   if (Thermostat.prototype.powerSave == true) {
     if (this.temperature <= 24) {
       this.temperature++
