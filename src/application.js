@@ -1,19 +1,24 @@
 thermostat = new Thermostat
 
 var buttons = $(".controller_button");
+var name = 'London'
+
 
 var updateTemperature =  function () {
-
-$.getJSON('http://api.openweathermap.org/data/2.5/find?q=London&units=metric',
-{},
+$.getJSON('http://api.openweathermap.org/data/2.5/find?q=' + name + '&units=metric',
 function (data) {
-  console.log(data.list[0].main.temp);
   $('#temp').html(data.list[0].main.temp)
+  $('#city').html(data.list[0].name)
 });
-
 }
 
 updateTemperature();
+
+
+$('#chose_a_city').click(function(){
+  name = $('#chosen_city').val()
+  updateTemperature()
+})
 
 $('#display').html(thermostat.temperature + ' °C');
 
