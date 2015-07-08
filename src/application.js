@@ -2,6 +2,18 @@ thermostat = new Thermostat
 
 var buttons = $(".controller_button");
 
+var updateTemperature =  function () {
+
+$.getJSON('http://api.openweathermap.org/data/2.5/find?q=London&units=metric',
+{},
+function (data) {
+  console.log(data.list[0].main.temp);
+  $('#temp').html(data.list[0].main.temp)
+});
+
+}
+
+updateTemperature();
 
 $('#display').html(thermostat.temperature + ' °C');
 
@@ -52,5 +64,9 @@ $('#powerSaveCheckBox').change(function() {
 $(buttons[0]).click(increase);
 $(buttons[1]).click(decrease);
 $(buttons[2]).click(reset);
+
+
+
+
 
 

@@ -39,3 +39,14 @@ body {
 .red {
   color: red;
 }
+
+#temp {
+  color: blue;
+}
+
+#londonTempDiv {
+  font-size: 1.7em;
+}
+
+
+
