@@ -16,8 +16,8 @@ updateTemperature();
 
 
 $('#chose_a_city').click(function(){
-  name = $('#chosen_city').val()
-  updateTemperature()
+  name = $('#chosen_city').val();
+  updateTemperature();
 })
 
 $('#display').html(thermostat.temperature + ' °C');
