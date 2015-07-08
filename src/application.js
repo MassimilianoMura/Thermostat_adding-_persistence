@@ -45,7 +45,7 @@ var color = function () {
 }
 
 $('#powerSaveCheckBox').change(function() {
-        powerSave();
+  powerSave();
 });
 
 
