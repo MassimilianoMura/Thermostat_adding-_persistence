@@ -89,14 +89,17 @@ var nav = function() { navigator.geolocation.getCurrentPosition(function(positio
     });
 };
 
+var runVavFunction = nav()
+
 var localupdate =  function () {
 
-  nav()
+runVavFunction
 
   $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lati + "&lon=" + longi,
     function (data) {
-      local = data.name
+      local = data.name;
   });
 }
+
 
 
