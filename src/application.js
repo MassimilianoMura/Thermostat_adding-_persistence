@@ -79,7 +79,24 @@ $(buttons[1]).click(decrease);
 $(buttons[2]).click(reset);
 
 
+var lati;
+var longi;
+var local;
 
+var nav = function() { navigator.geolocation.getCurrentPosition(function(position) {
+      lati = position.coords.latitude
+      longi = position.coords.longitude
+    });
+};
 
+var localupdate =  function () {
+
+  nav()
+
+  $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lati + "&lon=" + longi,
+    function (data) {
+      local = data.name
+  });
+}
 
 
