@@ -2,6 +2,7 @@ thermostat = new Thermostat
 
 var buttons = $(".controller_button");
 var name = 'London'
+var weatherBackground;
 
 
 var updateTemperature =  function () {
@@ -9,7 +10,14 @@ $.getJSON('http://api.openweathermap.org/data/2.5/find?q=' + name + '&units=metr
 function (data) {
   $('#temp').html(data.list[0].main.temp)
   $('#city').html(data.list[0].name)
+  weatherBackground = data.list[0].weather[0].main
+  background();
 });
+}
+
+var background = function () {
+  $('body').removeClass();
+  $('body').addClass(weatherBackground);
 }
 
 updateTemperature();
