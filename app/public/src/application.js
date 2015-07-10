@@ -2,8 +2,9 @@ thermostat = new Thermostat
 
 thermostat.temperature = $('#display').text()
 
+
 var buttons = $(".controller_button");
-var name = 'London';
+var name = $('#city').text();
 var weatherBackground;
 
 
@@ -14,6 +15,7 @@ function (data) {
   $('#city').html(data.list[0].name)
   weatherBackground = data.list[0].weather[0].main
   background();
+  $.post( '/', { city: name });
 });
 };
 
