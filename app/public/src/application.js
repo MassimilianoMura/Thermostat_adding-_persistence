@@ -1,7 +1,9 @@
 thermostat = new Thermostat
 
+thermostat.temperature = $('#display').text()
+
 var buttons = $(".controller_button");
-var name = 'London'
+var name = 'London';
 var weatherBackground;
 
 
@@ -13,12 +15,12 @@ function (data) {
   weatherBackground = data.list[0].weather[0].main
   background();
 });
-}
+};
 
 var background = function () {
   $('body').removeClass();
   $('body').addClass(weatherBackground);
-}
+};
 
 updateTemperature();
 
@@ -26,34 +28,31 @@ updateTemperature();
 $('#chose_a_city').click(function(){
   name = $('#chosen_city').val();
   updateTemperature();
-})
+});
 
-$('#display').html(thermostat.temperature + ' °C');
 
 var increase = function (e) {
   e.preventDefault();
   thermostat.increaseTemperature();
-  color();
-  $('#display').html(thermostat.temperature + ' °C');
-}
+  thermostatUpdate();
+};
 
 var decrease = function (e) {
   e.preventDefault();
   thermostat.decreaseTemperature();
-  color();
-  $('#display').html(thermostat.temperature + ' °C');
-}
+  thermostatUpdate();
+};
 
 var powerSave = function () {
   thermostat.changePowerSaveMode();
-}
+};
 
 var reset = function (e) {
   e.preventDefault();
   thermostat.resetTemperature();
-  color();
-  $('#display').html(thermostat.temperature + ' °C');
-}
+  thermostatUpdate();
+};
+
 
 var color = function () {
   var checkTemperature = thermostat.temperature
@@ -68,6 +67,14 @@ var color = function () {
     $('#display').addClass('red')
    }
 }
+
+var thermostatUpdate = function() {
+  $('#display').html(thermostat.temperature + ' °C');
+  $.post( '/', { sessiontemp: thermostat.temperature });
+  color();
+};
+
+thermostatUpdate();
 
 $('#powerSaveCheckBox').change(function() {
   powerSave();
@@ -93,7 +100,7 @@ function nav(callback) { navigator.geolocation.getCurrentPosition(function(posit
 
 function localUpdate() {
   nav(getTemperatureCoord);
-}
+};
 
 function getTemperatureCoord () {
   $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lati + "&lon=" + longi, function (data) {
