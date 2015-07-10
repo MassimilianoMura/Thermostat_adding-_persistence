@@ -2,9 +2,15 @@ require 'sinatra/base'
 
 class ThermoApp < Sinatra::Base
 
-  get '/' do
-    File.read(file.join('public', 'thermostat.html'))
-  end
+set :views, proc { File.join(root, '..', 'views') }
+
+get '/' do
+  erb :'thermostat'
+
+end
+
+
+
 
 
 run! if app_file = $0
