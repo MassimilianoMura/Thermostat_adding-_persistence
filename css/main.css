@@ -80,6 +80,16 @@ body {
   background-size: cover;
 }
 
+.Fog {
+  background: url(./img/atmosphere.jpg) no-repeat ;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #display {
 	font-size: 6em;
 }

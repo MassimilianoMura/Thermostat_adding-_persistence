@@ -83,23 +83,24 @@ var lati;
 var longi;
 var local;
 
-var nav = function() { navigator.geolocation.getCurrentPosition(function(position) {
-      lati = position.coords.latitude
-      longi = position.coords.longitude
+function nav(callback) { navigator.geolocation.getCurrentPosition(function(position) {
+      lati = position.coords.latitude;
+      longi = position.coords.longitude;
+      callback();
     });
 };
 
-var runVavFunction = nav()
 
-var localupdate =  function () {
-
-runVavFunction
-
-  $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lati + "&lon=" + longi,
-    function (data) {
-      local = data.name;
-  });
+function localUpdate() {
+  nav(getTemperatureCoord);
 }
 
+function getTemperatureCoord () {
+  $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lati + "&lon=" + longi, function (data) {
+        local = data.name;
+    });
+};
+
+localUpdate();
 
 
