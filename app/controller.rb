@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class ThermoApp < Sinatra::Base
 
-set :views, proc { File.join(root, '..', 'views') }
+set :views, proc { File.join(root, 'views') }
 
 get '/' do
   erb :'thermostat'
